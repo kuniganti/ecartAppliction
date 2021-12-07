@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<h:body> 
+<h:form>
+	<div align="center">
+	
+		<p:outputPanel>
+		<p>Welcome to Registration page</p>
+		<div align="left">
+		<p:outputLabel>UserName</p:outputLabel>
+		<h:inputText id="usrName" required ="true" value="#{userRegistration.userView.login.userName}"></h:inputText>
+		</div>
+		<div align="left">
+		<p:outputLabel>Password</p:outputLabel>
+		<p:password id="password" value="#{userRegistration.userView.login.password}"></p:password>
+		</div>
+		<div align="left">
+		<!-- <p:outputLabel>Repeat Password</p:outputLabel>
+		<p:password id="usrName" value="#{login.loginView.password} "></p:password> -->
+		<p:outputLabel>Name</p:outputLabel>
+		<p:inputText id="name" value="#{userRegistration.userView.name}"></p:inputText>
+		</div>
+		<div align="left">
+		<p:outputLabel>Gender</p:outputLabel>
+		<p:selectOneRadio id="gender" value="#{userRegistration.userView.gender}">
+		<f:selectItem itemLabel="Male" itemValue='M'/>
+		<f:selectItem itemLabel="Female" itemValue='F'/>
+		</p:selectOneRadio>
+		</div>
+		<div align="left">
+		<p:outputLabel>Primary EmailID</p:outputLabel>
+		<h:inputText id="prmEmailID" required="true" value="#{userRegistration.userView.primaryContact.emailID}" > </h:inputText>
+		<h:message for="prmEmailID" />
+		</div>
+		<div align="left">
+		<p:outputLabel>Primary Contact Number</p:outputLabel>
+		<h:inputText id="prmContact" value="#{userRegistration.userView.primaryContact.contactNumber}"></h:inputText>
+		</div>
+		<div align="left">
+		<p:outputLabel>Secondary EmailID</p:outputLabel>
+		<h:inputText id="scnEmailID" value="#{userRegistration.userView.secondaryContact.emailID}"></h:inputText>
+		</div>
+		<div align="left">
+		<p:outputLabel>Secondary Contact Number</p:outputLabel>
+		<h:inputText id="scnContact" value="#{userRegistration.userView.secondaryContact.contactNumber}"></h:inputText>
+		</div>
+		<div align="left">
+		<p:outputLabel>Flat Name</p:outputLabel>
+		<h:inputText id="flatName" value="#{userRegistration.userView.shippingAddress.flatName}"></h:inputText>
+		</div>
+		<div align="left">
+		<p:outputLabel>Street Name</p:outputLabel>
+		<h:inputText id="strtName" value="#{userRegistration.userView.shippingAddress.streetName}"></h:inputText>
+		</div>
+		<div align="left">
+		<p:outputLabel>city</p:outputLabel>
+		<h:inputText id="city" value="#{userRegistration.userView.shippingAddress.locality.city}"></h:inputText>
+		</div>
+		<div align="left">
+		<p:outputLabel>Zip code</p:outputLabel>
+		<h:inputText id="zipcode" value="#{userRegistration.userView.shippingAddress.locality.zipCode}"></h:inputText>
+		</div>
+		<div align="left">
+		<p:outputLabel>country</p:outputLabel>
+		<h:inputText id="cntry" value="#{userRegistration.userView.shippingAddress.locality.country}"></h:inputText>
+		</div>
+		<p:commandButton action="#{userRegistration.addUser()}" value="submit"></p:commandButton>
+		<p><h:messages /></p>
+		</p:outputPanel>
+	</div>
+</h:form>
+</h:body> 
+</ui:composition>

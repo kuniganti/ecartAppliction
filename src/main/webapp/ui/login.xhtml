@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	  <h:head >
+	  <title>Login</title>
+	  </h:head>
+	<h:body>
+	
+		<h:form id="loginForm">
+		<div align="center">
+		<h1>Ecart Login Page</h1>
+		<p:outputPanel id="loginPanel" >
+			
+			<div><h:outputLabel> User Name</h:outputLabel>
+			<h:inputText label="User Name" id="usrName" value="#{login.loginView.userName}"></h:inputText>
+			</div>
+			<div>
+			<h:outputLabel> Password</h:outputLabel>
+			<h:inputSecret  label="Password" id="pswrd" value="#{login.loginView.password}"></h:inputSecret>
+			</div>
+			<div>
+			<h:commandButton action="#{login.validateUser}" label="Login" value="Login"></h:commandButton>
+			<h:commandLink action="register" value="Register" />
+			</div>
+		</p:outputPanel>
+		</div>
+		</h:form>
+	</h:body>
+</ui:composition>
